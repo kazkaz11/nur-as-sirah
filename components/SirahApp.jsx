@@ -123,6 +123,9 @@ const go=useCallback(n=>{const x=Math.max(0,Math.min(evts.length-1,n));setDir(x>
 useEffect(()=>{setI(0);setExp(null);},[flt]);
 useEffect(()=>{if(ev)markRead(ev.id);},[ev?.id]);
 
+// Deep link: ?ch=slug or ?ch=id opens directly to that chapter
+useEffect(()=>{try{const p=new URLSearchParams(window.location.search);const ch=p.get("ch");if(!ch)return;const num=parseInt(ch);let idx=-1;if(!isNaN(num)){idx=evts.findIndex(e=>e.id===num);}else{idx=evts.findIndex(e=>e.t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")===ch);}if(idx>=0){setI(idx);markRead(evts[idx]?.id);}}catch{}},[]);
+
 // Keyboard
 useEffect(()=>{const h=e=>{if(e.key==="k"&&(e.metaKey||e.ctrlKey)){e.preventDefault();setSearchOpen(p=>!p);}if(tab!=="parcours"||finalQuiz)return;if(e.key==="ArrowRight"){e.preventDefault();go(i+1);}if(e.key==="ArrowLeft"){e.preventDefault();go(i-1);}};window.addEventListener("keydown",h);return()=>window.removeEventListener("keydown",h);},[i,go,tab,finalQuiz]);
 

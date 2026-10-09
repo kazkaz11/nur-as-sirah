@@ -179,7 +179,7 @@ export default function ChapterContent({ ev, seo, prevSeo, nextSeo }) {
           <p style={{ fontSize: '1rem', color: P.tx, marginBottom: '1rem' }}>
             Découvre les 64 chapitres, les quiz, les histoires pour enfants et plus encore !
           </p>
-          <a href={`/?ch=${seo.slug}`} style={{
+          <a href={`/?ch=${ev.id}`} style={{
             display: 'inline-block', padding: '0.75rem 2rem',
             background: P.gd, color: '#fff', borderRadius: 8,
             textDecoration: 'none', fontWeight: 700, fontSize: '1rem'

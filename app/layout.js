@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
-        {/* Google Search Console - remplace TON_CODE par ton code de vérification */}
-        {/* <meta name="google-site-verification" content="TON_CODE_ICI" /> */}
+        {/* Google Search Console */}
+        <meta name="google-site-verification" content="9DV0p6Qb09YhdY0TdV7CVVvmsH7b29iwyw8EYFbUxiY" />
         
         {/* Plausible Analytics - décommente quand tu es prêt */}
         {/* <script defer data-domain="sirahduprophete.fr" src="https://plausible.io/js/script.js"></script> */}

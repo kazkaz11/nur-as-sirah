@@ -172,7 +172,7 @@ const Sec=({id:sid,icon,title,accent,children})=>(
 const TUTO=[
 {icon:"👋",title:"Bismillah !",desc:"Bienvenue dans Nûr As-Sîrah, la vie du Prophète ﷺ racontée comme jamais. On te fait le tour en 30 secondes.",pos:"center",tab:null},
 {icon:"👆",title:"Swipe pour naviguer",desc:"Glisse à gauche ou à droite pour passer d'un chapitre à l'autre. 64 événements de la naissance au décès du Prophète ﷺ.",pos:"center",tab:"parcours"},
-{icon:"📖",title:"Chaque chapitre est riche",desc:"Descends pour découvrir : les personnages clés (clique pour ouvrir leur bio), les versets coraniques, les perles de sagesse à copier/partager, et les chaînes de conséquences.",pos:"top",tab:"parcours"},
+{icon:"📖",title:"Chaque chapitre est riche",desc:"Descends pour découvrir : les personnages clés (clique pour ouvrir leur bio), les versets coraniques et les chaînes de conséquences.",pos:"top",tab:"parcours"},
 {icon:"🔒",title:"3 Quiz de passage",desc:"Un quiz de 5 questions à la fin de chaque période. 3/5 pour débloquer la suite. Corrections détaillées à chaque réponse.",pos:"center",tab:"parcours"},
 {icon:"🔵",title:"Ta progression",desc:"Le petit cercle en bas à droite montre ton % de lecture. Clique dessus pour ouvrir la carte du parcours, comme un plateau de jeu !",pos:"center",tab:"parcours"},
 {icon:"📚",title:"Parcours thématiques",desc:"Relis la Sîrah sous un angle différent : le courage, les femmes, la miséricorde, les miracles... 8 parcours pour approfondir.",pos:"top",tab:"quiz"},
@@ -200,7 +200,7 @@ return(
 <span key={j} style={{padding:"4px 8px",borderRadius:8,background:P.cd,border:`1px solid ${P.bd}`,fontSize:"0.65rem",color:P.ts}}>{ic} {lb}</span>)}
 </div>
 <div style={{padding:"10px 14px",borderRadius:10,background:`${P.gd}08`,border:`1px solid ${P.gd}15`,marginBottom:14,textAlign:"left"}}>
-<p style={{fontSize:"0.75rem",lineHeight:1.6,color:P.ts,margin:0}}>⚠️ Ceci est un <strong style={{color:P.tx}}>résumé</strong> de la Sîrah. Pour approfondir : <em>Ar-Rahîq Al-Makhtûm</em> ou <em>Ibn Hishâm</em>.</p>
+<p style={{fontSize:"0.75rem",lineHeight:1.6,color:P.ts,margin:0}}>⚠️ <strong style={{color:P.tx}}>Attention :</strong> ceci n'est qu'un <strong style={{color:P.tx}}>très bref résumé</strong> de la Sîrah. La vie du Prophète ﷺ est infiniment plus riche, plus dense et plus détaillée que ce qui est présenté ici. Pour vraiment approfondir, nous vous recommandons : <em>Ar-Rahîq Al-Makhtûm</em> (Le Nectar Cacheté) ou <em>Ibn Hishâm</em>.</p>
 </div>
 <button onClick={dismissWelcome} style={{padding:"12px 28px",borderRadius:12,border:"none",background:`linear-gradient(135deg,${P.gd},${P.gdd})`,color:P.bg,cursor:"pointer",fontFamily:"inherit",fontWeight:700,fontSize:"0.9rem"}}>Commencer →</button>
 </div>
@@ -404,18 +404,7 @@ return <button key={ai} onClick={()=>!ans&&ansGate(ai)} style={{padding:"14px 16
 <div style={{fontSize:"1.15rem",color:`${P.tx}ee`,direction:"rtl",lineHeight:2.4}}>{ev.ay}</div>
 {ev.ayFr&&<div style={{fontSize:"0.85rem",color:P.ts,fontStyle:"italic",lineHeight:1.7,marginTop:10}}>{ev.ayFr}</div>}
 </div>}
-{/* Perle de sagesse, screenshotable */}
-{ev.gem&&<div style={{margin:"16px 0",padding:"20px",borderRadius:14,background:`linear-gradient(135deg,${P.gd}12,${P.gd}04)`,border:`1.5px solid ${P.gd}30`,textAlign:"center",position:"relative"}}>
-<div style={{fontSize:"0.45rem",letterSpacing:3,color:P.gd,marginBottom:8,fontWeight:700}}>✦ PERLE DE SAGESSE ✦</div>
-{ev.gem.ar&&<div style={{fontSize:"1.1rem",color:`${P.tx}cc`,direction:"rtl",lineHeight:2,marginBottom:8}}>{ev.gem.ar}</div>}
-<div style={{fontSize:"0.95rem",fontStyle:"italic",color:P.gd,lineHeight:1.8,fontWeight:500,marginBottom:8}}>« {ev.gem.fr} »</div>
-<div style={{fontSize:"0.65rem",color:P.ts}}>— {ev.gem.src}</div>
-<div style={{marginTop:10,display:"flex",justifyContent:"center",gap:8}}>
-<button onClick={()=>{const txt=`✦ ${ev.gem.fr} ✦\n\n— ${ev.gem.src}\n\n🕌 Nûr As-Sîrah`;navigator.clipboard.writeText(txt).then(()=>alert("Citation copiée !")).catch(()=>{});}} style={{padding:"6px 14px",borderRadius:8,border:`1px solid ${P.gd}40`,background:"transparent",cursor:"pointer",fontFamily:"inherit",fontSize:"0.65rem",color:P.gd}}>📋 Copier</button>
-<button onClick={()=>{const txt=`✦ ${ev.gem.fr} ✦\n\n— ${ev.gem.src}\n\n🕌 Nûr As-Sîrah`;if(navigator.share)navigator.share({text:txt}).catch(()=>{});}} style={{padding:"6px 14px",borderRadius:8,border:`1px solid ${P.gd}40`,background:"transparent",cursor:"pointer",fontFamily:"inherit",fontSize:"0.65rem",color:P.gd}}>📤 Partager</button>
-</div>
-<div style={{fontSize:"0.4rem",color:P.ts,marginTop:6}}>🕌 Nûr As-Sîrah</div>
-</div>}
+{/* Perle de sagesse supprimée à la demande */}
 {/* Citation marquante (legacy) */}
 {ev.quote&&!ev.gem&&<div style={{margin:"16px 0",padding:"16px 20px",borderRadius:12,background:`linear-gradient(135deg,${P.gd}08,${P.gd}03)`,borderLeft:`3px solid ${P.gd}`,textAlign:"center"}}>
 <div style={{fontSize:"0.95rem",fontStyle:"italic",color:P.gd,lineHeight:1.8,fontWeight:500}}>{ev.quote}</div>

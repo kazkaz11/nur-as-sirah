@@ -103,17 +103,7 @@ export default function ChapterContent({ ev, seo, prevSeo, nextSeo }) {
             )}
             {ev.ayFr && <p style={{ fontStyle: 'italic', color: P.tx, marginBottom: '0.5rem' }}>{ev.ayFr}</p>}
             {ev.ayRef && <p style={{ fontSize: '0.85rem', color: P.ts }}>{ev.ayRef}</p>}
-            {!ev.ay && ev.gem && (
-              <>
-                {ev.gem.ar && (
-                  <p style={{ fontSize: '1.2rem', color: P.gd, fontFamily: "'Amiri', serif", direction: 'rtl', lineHeight: 2, marginBottom: '0.75rem' }}>
-                    {ev.gem.ar}
-                  </p>
-                )}
-                <p style={{ fontStyle: 'italic', color: P.tx, marginBottom: '0.5rem' }}>{ev.gem.fr}</p>
-                <p style={{ fontSize: '0.85rem', color: P.ts }}>{ev.gem.src}</p>
-              </>
-            )}
+{/* Perle de sagesse supprimée à la demande */}
           </blockquote>
         )}
 
